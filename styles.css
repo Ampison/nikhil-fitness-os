@@ -3814,3 +3814,62 @@ body.has-scrolled.is-contact-visible .sticky-whatsapp {
     animation: none;
   }
 }
+
+/* Mobile board visual-first balance */
+@media (max-width: 520px) {
+  .hero-os .hero-visual {
+    min-height: 440px;
+    margin-top: 12px;
+  }
+
+  .hero-os .system-stage {
+    grid-template-rows: auto minmax(166px, 184px) auto;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .hero-os .viewer-panel {
+    min-height: 42px;
+    padding: 8px 10px;
+  }
+
+  .hero-os .viewer-panel strong {
+    font-size: 0.75rem;
+  }
+
+  .hero-os .viewer-panel small {
+    font-size: 0.65rem;
+  }
+
+  .hero-os .hero-dumbbell {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: 50% 50%;
+    opacity: 1;
+  }
+
+  .hero-os .mobile-offer-grid {
+    gap: 7px;
+  }
+
+  .hero-os .mobile-offer-grid .floating-card {
+    min-height: 74px;
+    padding: 9px;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-os .hero-visual {
+    min-height: 430px;
+  }
+
+  .hero-os .system-stage {
+    grid-template-rows: auto minmax(154px, 166px) auto;
+  }
+
+  .hero-os .mobile-offer-grid .floating-card {
+    min-height: 72px;
+  }
+}
