@@ -23,6 +23,7 @@ const hero = document.querySelector(".hero");
 const heroDumbbell = document.querySelector(".hero-dumbbell");
 const systemStage = document.querySelector(".system-stage");
 const contactSection = document.querySelector("#contact");
+const stickyActionZones = document.querySelectorAll("#start, #proof, #pricing, #contact");
 
 if (particleLayer) {
   const particleCount = window.matchMedia("(max-width: 640px)").matches ? 18 : 36;
@@ -87,6 +88,26 @@ if (contactSection && "IntersectionObserver" in window) {
   );
 
   contactObserver.observe(contactSection);
+}
+
+if (stickyActionZones.length && "IntersectionObserver" in window) {
+  const visibleActionZones = new Set();
+  const actionZoneObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          visibleActionZones.add(entry.target);
+        } else {
+          visibleActionZones.delete(entry.target);
+        }
+      });
+
+      document.body.classList.toggle("is-action-zone-visible", visibleActionZones.size > 0);
+    },
+    { rootMargin: "-14% 0px -18% 0px", threshold: 0.08 },
+  );
+
+  stickyActionZones.forEach((zone) => actionZoneObserver.observe(zone));
 }
 
 const revealItems = document.querySelectorAll(".reveal");
