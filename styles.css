@@ -3466,3 +3466,90 @@ body.has-scrolled.is-contact-visible .sticky-whatsapp {
   pointer-events: none;
   transform: translateY(18px);
 }
+
+/* Mobile launch containment */
+@media (max-width: 520px) {
+  :root {
+    --mobile-cta-clearance: 76px;
+  }
+
+  html {
+    scroll-padding-top: 88px;
+    scroll-padding-bottom: var(--mobile-cta-clearance);
+  }
+
+  [id] {
+    scroll-margin-top: 88px;
+  }
+
+  main {
+    padding-bottom: var(--mobile-cta-clearance);
+  }
+
+  .sticky-whatsapp {
+    right: max(12px, env(safe-area-inset-right, 0px));
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    left: auto;
+    min-height: 42px;
+    max-width: calc(100vw - 24px);
+    gap: 8px;
+    border: 1px solid rgba(183, 255, 106, 0.34);
+    border-radius: 999px;
+    padding: 8px 13px;
+    font-size: 0.8rem;
+    box-shadow:
+      0 14px 34px rgba(0, 0, 0, 0.32),
+      0 0 0 5px rgba(10, 143, 73, 0.08);
+  }
+
+  .sticky-whatsapp span {
+    width: 7px;
+    height: 7px;
+    box-shadow: 0 0 0 4px rgba(186, 255, 99, 0.13);
+  }
+
+  .site-footer {
+    padding-bottom: max(88px, calc(var(--mobile-cta-clearance) + env(safe-area-inset-bottom, 0px)));
+  }
+
+  .hero-os .hero-visual {
+    min-height: 500px;
+    margin-top: 18px;
+  }
+
+  .hero-os .system-stage {
+    inset: 6px 0 0;
+  }
+
+  .hero-os .stage-chrome {
+    top: 18px;
+  }
+
+  .hero-os .card-a,
+  .hero-os .card-b {
+    top: 14%;
+  }
+
+  .hero-os .card-c,
+  .hero-os .card-d {
+    top: 55%;
+  }
+
+  .hero-os .viewer-panel {
+    right: 5%;
+    bottom: 14px;
+    left: 5%;
+  }
+}
+
+@media (max-width: 375px) {
+  .sticky-whatsapp {
+    font-size: 0.76rem;
+    padding-right: 11px;
+    padding-left: 11px;
+  }
+
+  .hero-os .hero-visual {
+    min-height: 492px;
+  }
+}
