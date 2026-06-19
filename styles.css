@@ -3696,3 +3696,121 @@ body.has-scrolled.is-contact-visible .sticky-whatsapp {
     padding: 9px;
   }
 }
+
+/* Mobile board depth pass */
+@media (max-width: 520px) {
+  .hero-os .system-stage {
+    perspective: 900px;
+    background:
+      radial-gradient(ellipse at 50% 42%, rgba(110, 242, 128, 0.18), transparent 31%),
+      radial-gradient(ellipse at 50% 79%, rgba(8, 132, 66, 0.2), transparent 34%),
+      linear-gradient(145deg, rgba(183, 255, 106, 0.09), rgba(255, 255, 255, 0.018) 34%, rgba(2, 10, 5, 0.8) 72%),
+      rgba(3, 12, 7, 0.86);
+    box-shadow:
+      0 24px 60px rgba(0, 0, 0, 0.42),
+      0 0 36px rgba(46, 198, 89, 0.11),
+      inset 0 1px 0 rgba(255, 255, 255, 0.14),
+      inset 0 -26px 50px rgba(0, 0, 0, 0.28);
+  }
+
+  .hero-os .system-stage::before {
+    opacity: 0.82;
+    background:
+      radial-gradient(circle at 50% 47%, rgba(183, 255, 106, 0.14), transparent 30%),
+      linear-gradient(90deg, rgba(183, 255, 106, 0.055) 1px, transparent 1px),
+      linear-gradient(rgba(183, 255, 106, 0.045) 1px, transparent 1px);
+    background-size: auto, 34px 34px, 34px 34px;
+  }
+
+  .hero-os .system-stage::after {
+    border-color: rgba(183, 255, 106, 0.13);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.11),
+      inset 0 0 46px rgba(23, 168, 84, 0.09);
+  }
+
+  .hero-os .viewer-panel {
+    box-shadow:
+      0 12px 30px rgba(0, 0, 0, 0.34),
+      0 0 20px rgba(131, 201, 91, 0.09),
+      inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    transform: translate3d(0, -1px, 8px);
+    animation: mobile-review-float 6s ease-in-out infinite;
+  }
+
+  .hero-os .hero-dumbbell {
+    z-index: 3;
+    width: min(96%, 390px);
+    opacity: 0.96;
+    filter:
+      drop-shadow(0 18px 22px rgba(0, 0, 0, 0.56))
+      drop-shadow(0 0 20px rgba(93, 234, 111, 0.23));
+    animation: mobile-dumbbell-float 6.5s ease-in-out infinite;
+  }
+
+  .hero-os .mobile-offer-grid {
+    perspective: 800px;
+  }
+
+  .hero-os .mobile-offer-grid .floating-card {
+    border-color: rgba(183, 255, 106, 0.25);
+    background:
+      linear-gradient(145deg, rgba(183, 255, 106, 0.15), rgba(255, 255, 255, 0.04) 42%, rgba(3, 12, 7, 0.9) 100%);
+    box-shadow:
+      0 12px 24px rgba(0, 0, 0, 0.34),
+      0 0 18px rgba(73, 215, 99, 0.075),
+      inset 0 1px 0 rgba(255, 255, 255, 0.13);
+    transform-style: preserve-3d;
+    animation: mobile-card-float 6.2s ease-in-out infinite;
+  }
+
+  .hero-os .mobile-offer-grid .card-b {
+    animation-delay: -1.4s;
+  }
+
+  .hero-os .mobile-offer-grid .card-c {
+    animation-delay: -3.1s;
+  }
+
+  .hero-os .mobile-offer-grid .card-d {
+    animation-delay: -4.6s;
+  }
+}
+
+@keyframes mobile-card-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+
+@keyframes mobile-dumbbell-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-2deg);
+  }
+  50% {
+    transform: translate3d(0, -4px, 0) rotate(1deg);
+  }
+}
+
+@keyframes mobile-review-float {
+  0%,
+  100% {
+    transform: translate3d(0, -1px, 8px);
+  }
+  50% {
+    transform: translate3d(0, -3px, 8px);
+  }
+}
+
+@media (max-width: 520px) and (prefers-reduced-motion: reduce) {
+  .hero-os .viewer-panel,
+  .hero-os .hero-dumbbell,
+  .hero-os .mobile-offer-grid .floating-card {
+    animation: none;
+  }
+}
