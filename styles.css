@@ -3553,3 +3553,146 @@ body.has-scrolled.is-contact-visible .sticky-whatsapp {
     min-height: 492px;
   }
 }
+
+/* Mobile-native hero board */
+.mobile-offer-grid {
+  display: contents;
+}
+
+@media (max-width: 520px) {
+  .hero-os .hero-visual {
+    min-height: 456px;
+    margin-top: 14px;
+  }
+
+  .hero-os .system-stage {
+    display: grid;
+    inset: 0;
+    height: auto;
+    grid-template-areas:
+      "review"
+      "visual"
+      "offers";
+    grid-template-rows: auto minmax(156px, 176px) auto;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .hero-os .system-stage::after {
+    inset: 7px;
+  }
+
+  .hero-os .stage-chrome,
+  .hero-os .stage-number,
+  .hero-os .stage-axis,
+  .hero-os .system-board,
+  .hero-os .orbital-ring,
+  .hero-os .activity-panel {
+    display: none;
+  }
+
+  .hero-os .viewer-panel {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    grid-area: review;
+    width: auto;
+    min-height: 48px;
+    margin: 0;
+    padding: 10px 12px;
+    align-self: stretch;
+    border-color: rgba(183, 255, 106, 0.3);
+    background:
+      linear-gradient(90deg, rgba(183, 255, 106, 0.11), rgba(255, 255, 255, 0.02)),
+      rgba(3, 10, 6, 0.9);
+  }
+
+  .hero-os .viewer-panel strong {
+    font-size: 0.78rem;
+  }
+
+  .hero-os .viewer-panel small {
+    font-size: 0.68rem;
+  }
+
+  .hero-os .hero-dumbbell {
+    position: relative;
+    top: auto;
+    right: auto;
+    grid-area: visual;
+    align-self: center;
+    justify-self: center;
+    width: min(100%, 390px);
+    height: 100%;
+    max-height: 176px;
+    opacity: 0.9;
+    object-fit: contain;
+    transform: none;
+    animation: none;
+  }
+
+  .hero-os .mobile-offer-grid {
+    position: relative;
+    z-index: 5;
+    display: grid;
+    grid-area: offers;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .hero-os .mobile-offer-grid .floating-card {
+    position: relative;
+    inset: auto;
+    display: grid;
+    width: auto;
+    min-width: 0;
+    min-height: 78px;
+    max-width: none;
+    align-content: start;
+    padding: 10px;
+    animation: none;
+    transform: none;
+  }
+
+  .hero-os .mobile-offer-grid .floating-card::after {
+    display: none;
+  }
+
+  .hero-os .mobile-offer-grid .floating-card strong {
+    max-width: 132px;
+    font-size: 0.76rem;
+    line-height: 1.15;
+  }
+
+  .hero-os .mobile-offer-grid .floating-card small {
+    font-size: 0.62rem;
+    line-height: 1.26;
+  }
+
+  .hero-os .mobile-offer-grid .floating-card span {
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero-os .hero-visual {
+    min-height: 456px;
+  }
+
+  .hero-os .system-stage {
+    grid-template-rows: auto minmax(148px, 164px) auto;
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .hero-os .hero-dumbbell {
+    max-height: 164px;
+  }
+
+  .hero-os .mobile-offer-grid .floating-card {
+    min-height: 76px;
+    padding: 9px;
+  }
+}
