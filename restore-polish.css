@@ -100,6 +100,44 @@
     padding-bottom: var(--mobile-cta-clearance);
   }
 
+  /* On a phone, show the plan visual directly after the CTA. The process and
+     personal-practice rail then reinforce the board instead of delaying it. */
+  .hero-os .hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero-os .hero-copyblock {
+    display: contents;
+  }
+
+  .hero-os .live-badge,
+  .hero-os .eyebrow,
+  .hero-os h1,
+  .hero-os .hero-copy,
+  .hero-os .local-promise,
+  .hero-os .hero-actions {
+    order: 1;
+  }
+
+  .hero-os .hero-visual {
+    order: 2;
+  }
+
+  .hero-os .hero-route {
+    order: 3;
+    margin-top: 24px;
+  }
+
+  .hero-os .credibility-kicker {
+    order: 4;
+  }
+
+  .hero-os .trust-strip {
+    order: 5;
+  }
+
   .hero-os .hero-visual {
     min-height: clamp(430px, 114vw, 470px);
     margin-top: 14px;
