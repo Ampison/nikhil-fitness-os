@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nikhil-fitness-os-m4vh.vercel.app/sitemap.xml
